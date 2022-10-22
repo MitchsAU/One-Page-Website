@@ -1,0 +1,583 @@
+/* Colour Palatte
+Black: #2f2f2d */
+
+*
+{ /*Selecting all elements, just changing the general settings*/
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Lemon/Milk', sans-serif;
+}
+body{ /*Setting the background color*/
+    background-color: #1f2021;
+}
+.video { /*Positioning the video*/
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 100vh;
+}
+#navbar{ /*Styling and Positioning the navbar*/
+display: flex;
+justify-content: center;
+align-items: top;
+padding-top: 2vh;
+min-height: 7.5vh;
+background-color: #1f2021;
+}
+
+nav{
+    position: relative;
+    display: flex;
+}
+
+nav a{
+    position: relative;
+    margin: 0 20px;
+    font-size: 2vh;
+    color: #fdf1e7;
+    text-decoration: none;
+}
+
+nav #marker{
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background: linear-gradient(90deg, #810100, #ae1904, #c23003, #c44801);
+    bottom: 1.1em;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+#title h1{ /*Styling the title "Bush"*/
+    font-size: 9.5vw;
+    position: absolute;
+    padding-top: 25vh;
+    padding-left: 6vw;
+    color: #ae1904;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+#title h2{ /*Styling the title "Fire" I did these two seperatly because i needed to position them in two different places on the screen*/
+  font-size: 9.5vw;
+  position: absolute;
+  padding-top: 25vh;
+  padding-left: 67.5vw;
+  color: #ae1904;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+------- FIRE ANIMATION -------
+
+body { /*Setting more body variables, specific to the flame animation*/
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, #522e2a 0%, #321b20 100%) fixed;
+  }
+  
+  .content {
+    width: 50%;
+    height: 60%;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+  }
+
+  /*Setting the different flame layers*/
+
+  .fire {
+    position: absolute;
+    bottom: 30vh;
+    left: 22.5vw;
+    width: 30%;
+    padding-bottom: 50%;
+  }
+
+    .back {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding-bottom: 100%;
+      background: #ff6234;
+      border-radius: 0 75% 75% 75%;
+      transform: rotate(45deg);
+      animation: fire 2s linear infinite alternate;
+      animation-delay: 1s;
+    }
+    
+    .medium {
+      position: absolute;
+      bottom: 5%;
+      left: 10%;
+      width: 80%;
+      padding-bottom: 80%;
+      background: #ff7d17;
+      border-radius: 0 75% 75% 75%;
+      transform: rotate(45deg);
+      animation: fire 2s linear infinite alternate;
+      animation-delay: .5s;
+    }
+    
+    .front {
+      position: absolute;
+      bottom: 10%;
+      left: 20%;
+      width: 60%;
+      padding-bottom: 60%;
+      background: #ffb726;
+      border-radius: 0 75% 75% 75%;
+      transform: rotate(45deg);
+      animation: fire 2s linear infinite alternate;
+    }
+
+    /* Setting the 3 different light circles*/
+
+  .light {
+    position: absolute;
+    bottom: 30vh;
+    left: 15.75vw;
+    width: 55%;
+    padding-bottom: 55%;
+    border-radius: 50%;
+    background: #522e2a;
+    animation: light 2s linear infinite alternate;
+  }
+
+  .light2{
+      position: absolute;
+      bottom: 30vh;
+      left: 17vw;
+      width: 50%;
+      padding-bottom: 50%;
+      border-radius: 50%;
+      background: #643627;
+  }
+  .light3{
+    position: absolute;
+    bottom: 30vh;
+    left: 20vw;
+    width: 40%;
+    padding-bottom: 40%;
+    border-radius: 50%;
+    background: #743d25;
+  }
+
+  /*Creating keyframes so that the light animation is moving around, making it seems more realistic */
+  @keyframes light {
+    0%   {opacity: 1; transform: translate(0px) scale(1)}
+    100% {opacity: .6; transform: translateY(-10px) scaleX(.9)} /*This is done by changing the scale, Y Translate and opacity of each light circle*/
+  }
+  /*Creating the keyframes for the fire animation*/
+  @keyframes fire {
+    0%   {opacity: 1; transform: scale(1) rotate(45deg)}
+    100% {opacity: .8; transform: scale(.9) rotate(45deg)} /*This is done by changing the scale and opactity of the flame*/
+  }
+
+  ----------scroll down arrow -------------
+
+  html,body { /*Creating more body variables for the scroll down arrow animation*/
+    padding:0;
+    margin:0;
+    width:100%;
+    height:100%;
+  }
+  
+  #wrapper {
+    display: table;
+    width:100%;
+    height:100%;
+    padding-top: 62.5vh;
+  }
+  
+  #wrapper-inner {
+    display: table-cell;
+    vertical-align: middle;
+    width:100%;
+    height:100%;
+  }
+  
+  #scroll-down {
+    display: block;
+    position: relative;
+    padding-top: 79px;
+    text-align:center;
+  }
+  .arrow-down {
+      display: block;
+      margin: 0 auto;
+      width: 10px;
+      height: 38px;
+  }
+  .arrow-down:after {
+      content: '';
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid #b91a2f;
+      border-right: 2px solid #b91a2f;
+      transform: rotate(135deg);
+  }
+  #scroll-title {
+      display: block;
+      text-transform: uppercase;
+      color: #b91a2f;
+    font-family: Helvetica Neue, Helvetica, Arial;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:.1em;
+  }
+  #scroll-down::before {
+      animation: arrow 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      margin-left: -1px;
+      width: 2px;
+      height: 90px;
+      background: #b91a2f;
+      content: ' ';
+  }
+  
+  @keyframes arrow { /*Creating keyframes so that the line of the arrow, looks like it is appearing at one end and disapearing at the other end */
+      0% {
+          transform-origin: 0% 0%; /*Starting at 0*/
+          transform: scale(1, 0);
+      }
+      50% {
+          transform-origin: 0% 0%;
+          transform: scale(1, 1);
+      }
+      50.1% {
+          transform-origin: 0% 100%;
+          transform: scale(1, 1);
+      }
+      100% {
+          transform-origin: 0% 100%; /*Ending at 100%*/
+          transform: scale(1, 0);
+      }
+  }
+
+  h3{ /*Styling the "Scroll Down" text*/
+    color:#585858;
+    text-align: center;
+    margin-top: 7vh;
+    font-size: 5em;
+  }
+  --------image slider -------
+
+#imagetitle{
+  text-align: center;
+}
+
+  .slider{ /*Setting the slider variables*/
+    width: 50vw;
+    height: 70vh;
+    border-radius: 10px;
+    overflow: hidden; /*Makign sure the voerflow is hidden so that the image stay inside of the box of the slider*/
+    margin-left: 25vw;
+    margin-top: 8vh;
+  }
+
+  .slides{
+    width: 500%;
+    height: 70vh;
+    display: flex; /*Displaying the images as flex so that they are all displayed in horizontally and not vertically*/
+  }
+
+  .slides input{
+    display: none;
+  }
+  
+.slide{
+  width: 20%;
+  transition: 2s; /*Making it so the images slide over and dont just switch to the next image, this makes for a nicer viewing experiance*/
+}
+
+.slide img{
+  width: 50vw;
+  height: 70vh;
+}
+
+.navigation-manual{ /*Setting the manual navigation buttons*/
+  position: absolute;
+  width: 50vw;
+  margin-top: 65vh;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn{ /*Styling the manual navigation buttons*/
+  border: 2px solid #ae1904;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+}
+
+.manual-btn:hover{
+  background: #ae1904; /*When hovering over the manual navigation buttons, it fills in the button to a solid colour over a duration of 1s*/
+}
+
+/*Pushing Margins over*/
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+#radio2:checked ~ .first{
+  margin-left: -20%;
+}
+#radio3:checked ~ .first{
+  margin-left: -40%;
+}
+#radio4:checked ~ .first{
+  margin-left: -60%;
+}
+
+/*Creating space for the 2 rows that are displaying the flip cards*/
+.modules{
+  height: 80vh;
+  display: flex; /*Displaying the cards as flex so they are all lined up horizontally and not vertically which is the defualt*/
+}
+.modules2{
+  height: 80vh;
+  display: flex;
+}
+
+
+.card{ /*Creating the card sizes*/
+  margin: 100px auto 0;
+  width: 20vw;
+  height: 65vh;
+  perspective: 1000px; /*Setting a 1000px perspecting so that when flipping the card it seems like your flipping an actual card in real life, the lower this number goes the more distoration/stretching there is when flipping the card over*/
+}
+
+.card__inner{
+  width: 100%;
+  height: 100%;
+  transition: transform 1s; /*Card flip duration lasts 1s*/
+  transform-style: preserve-3d;
+  cursor: pointer; /*Setting the cursor as pointer so that the user knows that they can click on the card to make it flip*/
+  position: relative;
+}
+
+.card__inner.is-flipped{
+  transform: rotateY(180deg); /*Rotate the card 180deg when flipped, otherwise all information will be displayed on the screen at the same time when I only need the title*/
+}
+
+.card__face{ /*Styling the face of the card*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card__face--front{ /*Creating a gradient for the card, and centering everything*/
+  background-image: linear-gradient(to bottom right, #ff6234, #ae1904);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__face--front h2{ /*Stylign the title text*/
+  color: white;
+  font-size: 2vw;
+}
+
+.card__face--back{
+  background-color: #292a2b; /*Setting the background colour ofthe back of the card*/
+  transform: rotateY(180deg); /*Rotating the card 180deg so that the inforamtion is visiable and hidding the other inforamtion on the front of the card*/
+}
+
+.card__content{ /*Setting the width and height of the content of the card*/
+  width: 100%;
+  height: 100%;
+}
+
+.card__header{ /*Styling the header of the back of teh card*/
+  position: relative;
+  padding: 30px 30px 40px;
+}
+
+.card__header:after{ /*Creating a gradient and poisitoning*/
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 0 0 50% 0;
+  background-image: linear-gradient(to bottom left, #ff6234 10%, #ae1904 115%);
+}
+
+.card__header h2{ /*Styling the header text on teh back of the card*/
+  color: #fff;
+  font-size: 2vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card__body{ /*Adding padding the the body of the back of the card*/
+  padding: 30px;
+}
+
+.card__body h3{ /*Styling the subtitle on the back of the card*/
+  font-family: Helvetica Neue, Helvetica, Arial; /*Changing the font so it is more readable*/
+  color: #f5f5f5;
+  font-size: 1.5vw;
+  font-weight: 600;
+  margin-top: -0.5vw;
+  margin-bottom: 0.8vw;
+}
+
+.card__body p{ /*Styling the paragraph of the back of the card*/
+  font-family: Helvetica Neue, Helvetica, Arial; /*Changing the fotn so it is more readable*/
+  color: #f5f5f5;
+  font-size: 0.7vw;
+  line-height: 1.5;
+}
+
+.space{ /* Adding space between the cards and the footer, so that the waves from the footer do not cover any of teh cards, which may impact the reading experiance*/
+  height: 20vh;
+}
+
+footer{ /*Setting and styling the general parts of the footer */
+  position: relative;
+  width: 100%;
+  background: #ff6234;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex; /*Dispalying the footer components as flex so they are all horizontal rather than verical which is the default*/
+  justify-content: center;
+  align-items: center; /*Alligning all items in the center of the footer*/
+  flex-direction: column; /*Setting the flex direction asa column so that the 3 different parts of the footer are in a column of 3 vertically rather than horiztonally next to each other*/
+}
+
+footer .social_icon, /*Styling the footer icons and menu*/
+footer .menu{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+footer .social_icon li,
+footer .menu li{
+  list-style: none;
+}
+
+footer .social_icon li a{ /* Styling the icons on the footer*/
+  font-size: 2em;
+  color: white;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s; /*The animation lasting 0.5s when hovering over it*/
+}
+
+footer .social_icon li a:hover{
+ transform: translateY(-10px); /*Hovering over the icon moves it up 10px over a duration of 0.5s*/
+}
+
+footer .menu li a{ /*Styling the footer quick links*/
+  font-family: Helvetica Neue, Helvetica, Arial;
+  font-size: 1.2em;
+  color: white;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75; /*I set the opacity to 0.75 so that when the user hovers over it, it changes back to an opacity of 1, giving visual feedback to the user that they can click it*/
+}
+
+footer .menu li a:hover{
+  opacity: 1; /*Changing the opacity back to 1 on hover*/
+}
+
+footer p{ /*Styling my name and uid*/
+  font-family: Helvetica Neue, Helvetica, Arial;
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+footer .wave { /*Styling the waves*/
+  position: absolute;
+  top: -100px; /*Movingthe wave up 100px so it is above the footer*/
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(images/wave.png); /*Adding in the image of the wave*/
+  background-size: 1000px 100px;
+}
+
+footer .wave#wave1 {
+z-index: 100; /*Setting the waves index to be on top of everything*/
+opacity: 1; /*Max Opacity as it is the top most wave*/
+bottom: 0;
+animation: animateWave 4s linear infinite; /*Setting the wave animation of a duration of 4s*/
+}
+
+footer .wave#wave2 {
+  z-index: 99; /*Setting the wave index just below the first wave*/
+  opacity: 0.5; /*Half opacity as it is the second wave*/
+  bottom: 15px;
+  animation: animateWave_02 4s linear infinite; /*Setting the wave animation of a duration of 4s*/
+  }
+
+footer .wave#wave3 {
+ z-index: 99; /*Setting the wave index just below the first wave*/
+ opacity: 0.2; /*low opacity as it is the thrid wave*/
+ bottom: 10px;
+ animation: animateWave_ 3s linear infinite; /*Setting the wave animation of a duration of 3s*/
+}
+footer .wave#wave4 {
+ z-index: 99; /*Setting the wave index just below the first wave*/
+ opacity: 0.7; /*random opacity so that the waves dont look too organised the perfect, more randomness in the mixture*/
+ bottom: 20px;
+ animation: animateWave_02 3s linear infinite;/*Setting the wave animation of a duration of 3s*/
+ }
+
+
+@keyframes animateWave{ /*Creaing keyframes for the waves*/
+  0%
+  {
+    background-position-x: 1000px; /*starting the wave at 1000px*/
+  }
+  100%
+  {
+    background-position-x: 0px; /*and Moving it along until 0px*/
+  }
+}
+
+/*SAme this is happening here for wave 2 but just in reverse so that the waves are going in a different direction than the other 2 waves*/
+@keyframes animateWave_02{
+  0%
+  {
+    background-position-x: 0px;
+  }
+  100%
+  {
+    background-position-x: 1000px;
+  }
+}
+
+
